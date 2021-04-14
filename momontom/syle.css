@@ -1,0 +1,43 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+#clock {
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+#getval {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+body {
+  background: black;
+}
+
+.clock {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-70%);
+  color: #17d4fe;
+  font-size: 10rem;
+  font-family: Orbitron;
+  letter-spacing: 7px;
+}
