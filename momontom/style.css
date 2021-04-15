@@ -10,6 +10,15 @@ html {
   margin: 0;
 }
 
+.form,
+.name {
+  display: none;
+}
+.show-name {
+  display: block;
+}
+
+/* 
 #clock {
   background-image: url('');
   background-size: cover;
@@ -25,19 +34,4 @@ html {
   position: absolute;
   top: 0;
   z-index: 2;
-}
-
-body {
-  background: black;
-}
-
-.clock {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-70%);
-  color: #17d4fe;
-  font-size: 10rem;
-  font-family: Orbitron;
-  letter-spacing: 7px;
-}
+} */
