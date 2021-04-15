@@ -20,11 +20,15 @@ function loadName() {
     displayName(currentUser);
   }
 }
+function saveName(text) {
+  localStorage.setItem(USER, text);
+}
 function handleSubmit(event) {
   event.preventDefault();
   const currentValue = input.value;
   console.log(currentValue);
   displayName(currentValue);
+  saveName(currentValue);
 }
 
 function askName() {
