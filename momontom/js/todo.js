@@ -4,6 +4,8 @@ const toDoForm = document.querySelector('.js-toDoForm'),
 
 const TODOS = 'toDos';
 
+const toDos = [];
+
 function loadToDo() {
   const toDos = localStorage.getItem(TODOS);
 
@@ -16,10 +18,18 @@ function displayToDo(text) {
   const deleteBtn = document.createElement('button');
   deleteBtn.innerText = '❌';
   const span = document.createElement('span');
+  const newId = toDos.length + 1;
   span.innerText = text;
   list.appendChild(deleteBtn);
   list.appendChild(span);
+  list.id = newId;
   toDoList.appendChild(list);
+
+  const toDoObj = {
+    text: text,
+    id: newId,
+  };
+  toDos.push(toDoObj);
 }
 
 function handleSubmit(event) {
