@@ -10,13 +10,24 @@ function loadToDo() {
   const toDos = localStorage.getItem(TODOS);
 
   if (toDos !== null) {
+    const parsedToDos = JSON.parse(toDos);
+    parsedToDos.forEach(function (toDo) {
+      displayToDo(toDo.text);
+    });
   }
 }
-
+function saveToDo() {
+  localStorage.setItem(TODOS, JSON.stringify(toDos));
+}
+function deleteToDo(event) {
+  console.log(event);
+}
 function displayToDo(text) {
   const list = document.createElement('li');
   const deleteBtn = document.createElement('button');
   deleteBtn.innerText = '❌';
+
+  deleteBtn.addEventListener('click', deleteToDo);
   const span = document.createElement('span');
   const newId = toDos.length + 1;
   span.innerText = text;
@@ -30,6 +41,7 @@ function displayToDo(text) {
     id: newId,
   };
   toDos.push(toDoObj);
+  saveToDo();
 }
 
 function handleSubmit(event) {
